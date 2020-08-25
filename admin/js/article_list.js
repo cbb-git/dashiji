@@ -52,7 +52,7 @@ $(function () {
         data()
     })
 
-
+// 分页插件
     function setPage(yeshu) {
         $(".pagination").bootstrapPaginator({
             //设置版本号
