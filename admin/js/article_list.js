@@ -82,4 +82,23 @@ $(function () {
 
     })
 
+    $('tbody').on('click', '.delete', function () {
+        console.log(1);
+        let id = $(this).data('id')
+        console.log(id);
+
+        $.ajax({
+            url: aabb.article_delete,
+            type: 'post',
+            data: { id: id },
+            dataType: 'json',
+            success: (res) => {
+                console.log(res);
+                if (res.code == 204) {
+                    alert(res.msg)
+                    data();
+                }
+            }
+        })
+    })
 })

@@ -91,7 +91,8 @@
         <td class="text-center">{{$value.state}}</td>
         <td class="text-center">
             <a href="article_edit.html?id={{$value.id}}" class="btn btn-default btn-xs">编辑</a>
-            <a href="javascript:void(0);" class="btn btn-danger btn-xs delete">删除</a>
+                   <!-- 因为我们需要删除点击的哪一项 所以需要传入id -->
+            <a href="javascript:void(0);" class="btn btn-danger btn-xs delete" id="asd"  data-id="{{$value.id}}">删除</a>
         </td>
     </tr>
 {{/each}}

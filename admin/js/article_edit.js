@@ -104,4 +104,28 @@ $(function () {
             }
         })
     })
+    $('. btn-draft').on('click', function () {
+        let formdata = new FormData($('#form')[0])
+        console.log(...formdata);
+        // 然后我们需要追加数据进去   
+        formdata.append('id', id);
+        formdata.append('content', tinymce.activeEditor.getContent());
+        formdata.append('state', '草稿');
+
+        $.ajax({
+            url: aabb.article_edit,
+            type: 'post',
+            dataType: 'json',
+            data: formdata,
+            contentType: false,
+            processData: false,
+            success: (res) => {
+                console.log(res);
+                if (res.code == 200) {
+                    alert('修改完成');
+                    location.href = 'article_list.html'
+                }
+            }
+        })
+    })
 })
