@@ -24,6 +24,7 @@ $(function () {
     }
     data()
 
+    // 分页
     function setPage(yeshu) {
         $(".pagination").bootstrapPaginator({
             //设置版本号
@@ -40,4 +41,37 @@ $(function () {
             }
         })
     }
+// 封装
+    function result(url, id) {
+        $.ajax({
+            url: url,
+            type: 'post',
+            dataType: 'json',
+            data: { id: id },
+            success: (res) => {
+                console.log(res);
+                if (res.code == 200) {
+                    alert('操作成功');
+                    data()
+                }
+            }
+        })
+    }
+
+
+
+    $('tbody').on('click', '.btn-warning', function () {
+        let id = $(this).data('ratify');
+        result(aabb.comment_pass, id)
+
+    });
+
+    $('tbody').on('click', '.btn-success', function () {
+        let id = $(this).data('rafuse');
+        result(aabb.comment_reject, id)
+    })
+    $('tbody').on('click', '.btn-danger', function () {
+        let id = $(this).data('dale');
+        result(aabb.comment_delete, id)
+    })
 })
