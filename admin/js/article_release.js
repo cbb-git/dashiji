@@ -11,8 +11,7 @@ $(function () {
 
     })
 
-
-
+//   下拉列表
     $.ajax({
         url: aabb.category_list,
         dataType: 'json',
@@ -25,6 +24,7 @@ $(function () {
 
     })
 
+    // 获取时间
     $(function () {
         //或者为这样的
         jeDate("#indate", {
@@ -36,7 +36,7 @@ $(function () {
             minDate: "2014-09-19 00:00:00"
         })
     });
-    // // 获取数
+    
 
 
 

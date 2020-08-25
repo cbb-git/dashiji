@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>文章列表</title>
-    <link rel="stylesheet" href="./libs/jedate/css/jedate.css">
+
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/iconfont.css">
@@ -14,12 +14,15 @@
     <!-- jq -->
     <script src="./libs/jquery-1.12.4.min.js"></script>
     <!-- 模板引擎 -->
-    <script src="./libs/jedate/js/jedate.js"></script>
+
     <script src="./libs/template-web.js"></script>
     <script src="./js/article_release.js"></script>
+    <link rel="stylesheet" href="./libs/jedate/css/jedate.css">
+    <script src="./libs/tinymce/tinymce.min.js"></script>
+    <script src="./libs/jedate/js/jedate.js"></script>
     <script src="./js/http.js  
     "></script>
-    <script src="./libs/tinymce/tinymce.min.js"></script>
+
 </head>
 
 <body>
@@ -46,9 +49,9 @@
                     <label for="inputCategory" class="col-sm-2 control-label">文章类别：</label>
                     <div class="col-sm-4">
                         <select class="form-control category" name="categoryId"></select>
-
-                            <script id="content1" type="text/html">
-
+                                 <!-- 下拉列表 -->
+                        <script id="content1" type="text/html">
+                                 
                               {{each data}}
                                     
                                     <option value='{{$value.id}}'>{{$value.name}}</option>
@@ -61,13 +64,15 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">发布时间：</label>
                     <div class="col-sm-4">
-                        <input id="indate" type="text" placeholder="请选择" readonly name="date">.
+                          <!-- 发布时间 -->
+                        <input id="indate" type="text" placeholder="请选择" readonly name="date">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">文章内容：</label>
                     <div class="col-sm-10">
-                        <textarea id="mytextarea" >dada</textarea>
+                        <!-- 富文本框 -->
+                        <textarea id="mytextarea">dada</textarea>
                     </div>
                 </div>
                 <div class="form-group">
