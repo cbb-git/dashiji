@@ -1,6 +1,5 @@
 $(function () {
-    console.log(location.search.split('='));
-    let id = location.search.split('=')[1]
+
 
     //   下拉列表
     $.ajax({
@@ -57,4 +56,22 @@ $(function () {
 
     });
 
+    console.log(location.search.split('='));
+    let id = location.search.split('=')[1];
+
+    $.ajax({
+        url: aabb.article_search,
+        type: 'get',
+        dataType: 'json',
+        // 参数  根据id生成
+        data: { id: id },
+        success: (res) => {
+            console.log(res);
+            $('#inputTitle').val(res.data.title);
+            $('.article_cover').attr('src', res.data.cover);
+            $('.category').val(res.data.categoryId);
+            $('#indate').val(res.data.date);
+            $('#mytextarea').val(res.data.content)
+        }
+    })
 })
