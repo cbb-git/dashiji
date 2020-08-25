@@ -86,7 +86,7 @@ $(function () {
 
     // 点击编辑 模态框 切换到编辑页面
 
-    $('tbody').on('click', '.btn-eait', function () {
+    $('tbody').on('click', '.btn-info', function () {
 
 
 
@@ -148,7 +148,7 @@ $(function () {
 
     // 点击删除
     //   因为我们的删除键 是动态生成的所以需要我们的时间委托
-    $('tbody').on('click', '.btn-xs', function () {
+    $('tbody').on('click', '.btn-danger', function () {
 
         //    获取id   我们需要自定义属性来调
         // 点击

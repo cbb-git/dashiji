@@ -60,7 +60,7 @@ $(function () {
             // 显示第几页
             currentPage: page,
             // 总页数
-            totalPages: yeshu,
+            totalPages: yeshu == 0 ? 1 : yeshu,
             //当单击操作按钮的时候, 执行该函数, 调用ajax渲染页面
             onPageClicked: function (event, originalEvent, type, cpage) {
                 // 把当前点击的页码赋值给currentPage, 调用ajax,渲染页面
@@ -73,10 +73,10 @@ $(function () {
 
     $('#release_btn').on('click', function () {
 
-        console.log( $('.level02 >li:eq(1)', window.parent.document) );
+        console.log($('.level02 >li:eq(1)', window.parent.document));
 
         $('.level02 >li:eq(1)', window.parent.document).addClass('active').siblings().removeClass('active');
-        
+
         location.href = 'article_release.html';
 
 
